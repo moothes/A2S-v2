@@ -48,7 +48,7 @@ More resources are coming soon.
  python3 train.py a2s --gpus=0 --trset=cdot
  ```
  
- At the end of the last training epoch in Stage 1, we will generate pseudo labels for all train sets and save them to a new ```pseudo``` folder.
+ After the training process in stage 1, we will generate pseudo labels for all train sets and save them to a new ```pseudo``` folder.
  
  ### Stage 2
  ```
