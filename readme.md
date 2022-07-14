@@ -7,6 +7,7 @@ Pretrained backbone: [MoCo-v2](https://github.com/facebookresearch/moco).
 RGB SOD results: [pseudo labels](https://drive.google.com/drive/folders/1agLC1iNoONw008jaqEvfRalrBWFWIAL4?usp=sharing) and [saliency maps](https://drive.google.com/drive/folders/15YOcPQ5vzBqlk50DEEVuBXSo5YzqpT89?usp=sharing).  
 More resources are coming soon.
 
+All trained weights can be download from [Onedrive](https://drive.google.com/drive/folders/1noB7bVjqJqFAYQubTLU_tyF6GkgLZT7z?usp=sharing).
 
  ## Dataset
  For convenience, we re-organized the datasets for different SOD tasks.  
