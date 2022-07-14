@@ -10,7 +10,7 @@ More resources are coming soon.
 
  ## Dataset
  For convenience, we re-organized the datasets for different SOD tasks.  
- ### RGB SOD
+ ### RGB SOD [download](https://drive.google.com/file/d/17X4SiSVuBmqkvQJe_ScVARKPM_vgvCOi/view?usp=sharing)
  2 train sets: ```DUTS-TR``` or ```MSB-TR``` (the train split of MSRA-B).  
  6 test sets: ```HKU-IS```, ```PASCAL-S```, ```ECSSD```, ```DUTS-TE```, ```DUT-OMRON``` and ```MSB-TE``` (the test split of MSRA-B).  
  ### RGB-D SOD [download](https://drive.google.com/file/d/1mvlkHBqpDal3Ce_gxqZWLzBg4QVWY64U/view?usp=sharing)
