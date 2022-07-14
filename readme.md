@@ -1,7 +1,7 @@
 # A2S-v2
 
-Our new work on Unsupervised Salient Object Detection (USOD) task.  
-Our code is based on our [SOD benchmark](https://github.com/moothes/SALOD).  
+Source code of our work: "[Appearance-guided Attentive Self-Paced Learning for Unsupervised Salient Object Detection](https://arxiv.org/abs/2207.05921)".    
+Our code is based on [A2S-v1](https://github.com/moothes/A2S-USOD) and [SOD benchmark](https://github.com/moothes/SALOD).
 
 Pretrained backbone: [MoCo-v2](https://github.com/facebookresearch/moco).  
 RGB SOD results: [pseudo labels](https://drive.google.com/drive/folders/1agLC1iNoONw008jaqEvfRalrBWFWIAL4?usp=sharing) and [saliency maps](https://drive.google.com/drive/folders/15YOcPQ5vzBqlk50DEEVuBXSo5YzqpT89?usp=sharing).  
