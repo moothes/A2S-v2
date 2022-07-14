@@ -19,7 +19,7 @@ More resources are coming soon.
  ### RGB-T SOD
  1 train set: ```VT5000-TR``` (the train split of VT5000).  
  3 test sets: ```VT821```, ```VT1000``` and ```VT5000-TE``` (the test split of VT5000).  
- ### VSOD SOD
+ ### Video SOD
  1 train set: ```VSOD-TR```, which is a collection of the train splits in the DAVIS and DAVSOD datasets.  
  4 test sets: ```SegV2```, ```FBMS```, ```DAVIS-TE``` and ```DAVSOD-TE```. The last two are the test splits of DAVIS and DAVSOD, respectively.  
  
