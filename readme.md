@@ -11,10 +11,10 @@ More resources are coming soon.
  ## Dataset
  For convenience, we re-organized the datasets for different SOD tasks.  
  ### RGB SOD
- 2 train sets: ```DUTS-TR``` and ```MSB-TR``` (the train split of MSRA-B).  
+ 2 train sets: ```DUTS-TR``` or ```MSB-TR``` (the train split of MSRA-B).  
  6 test sets: ```HKU-IS```, ```PASCAL-S```, ```ECSSD```, ```DUTS-TE```, ```DUT-OMRON``` and ```MSB-TE``` (the test split of MSRA-B).  
  ### RGB-D SOD
- 2 train sets: ```RGBD-TR``` and ```RGBD-TR-2985```. RGBD-TR include 2185 images, the same as other RGB-D SOD methods.  
+ 2 train sets: ```RGBD-TR``` or ```RGBD-TR-2985```. RGBD-TR include 2185 images, the same as other RGB-D SOD methods.  
  9 test sets: ```DUT```, ```LFSD```, ```NJUD```, ```NLPR```, ```RGBD135```, ```SIP```, ```SSD```, ```STERE1000``` and ```STEREO```.  
  ### RGB-T SOD
  1 train set: ```VT5000-TR``` (the train split of VT5000).  
@@ -26,14 +26,14 @@ More resources are coming soon.
  
  ## Usage
  Network names used in our framework: Stage 1: ```a2s```; Stage 2: ```cornet``` (RGB SOD), ```midd``` (RGB-D, RGB-T and video SOD).  
- Our train sets include: RGB (DUTS-TR), RGB-D (RGBD-TR), RGB-T (VT5000-TR) and video (VSOD-TR).
+ Our train sets include: DUTS-TR or MSB-TR, RGBD-TR, VT5000-TR and VSOD-TR.
  
  # notice
  ```--vals``` is formated as two characters.   
- The first character means the task: (RGB (c), RGB-D (d), RGB-T (t) and video (o).)  
- The second character means train (r) or test (e) sets.  
- For example, *cr* incidates the train sets of the RGB SOD task, *oe* indicates the test sets of the VSOD task.   
- More details please refer to ```data.py```
+ The first character means the task: (RGB[c], RGB-D[d], RGB-T[t] and video[o].)  
+ The second character means train[r] or test[e] sets.  
+ For example, ''cr'' incidates the train sets of the RGB SOD task, ''oe'' indicates the test sets of the VSOD task.   
+ More details please refer to ```data.py```.
  
  
  ### Stage 1
@@ -48,7 +48,7 @@ More resources are coming soon.
  python3 train.py a2s --gpus=0 --trset=cdot
  ```
  
- At the last training epoch in Stage 1, it will generate pseudo labels for all train sets and save them to a new ```pseudo``` folder.
+ At the end of the last training epoch in Stage 1, we will generate pseudo labels for all train sets and save them to a new ```pseudo``` folder.
  
  ### Stage 2
  ```
