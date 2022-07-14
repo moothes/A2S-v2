@@ -21,7 +21,7 @@ More resources are coming soon.
  3 test sets: ```VT821```, ```VT1000``` and ```VT5000-TE``` (the test split of VT5000).  
  ### Video SOD
  1 train set: ```VSOD-TR``` (a collection of the train splits in the DAVIS and DAVSOD datasets).  
- 4 test sets: ```SegV2```, ```FBMS```, ```DAVIS-TE``` and ```DAVSOD-TE```. The last two are the test splits of DAVIS and DAVSOD, respectively.  
+ 4 test sets: ```SegV2```, ```FBMS```, ```DAVIS-TE``` and ```DAVSOD-TE```. The last two sets are the test splits of DAVIS and DAVSOD, respectively.  
  
  
  ## Usage
