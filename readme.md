@@ -28,7 +28,7 @@ More resources are coming soon.
  Network names used in our framework: Stage 1: ```a2s```; Stage 2: ```cornet``` (RGB SOD), ```midd``` (RGB-D, RGB-T and video SOD).  
  Our train sets include: DUTS-TR or MSB-TR, RGBD-TR, VT5000-TR and VSOD-TR.
  
- # notice
+ ### Notice
  ```--vals``` is formated as two characters.   
  The first character means the task: (RGB[c], RGB-D[d], RGB-T[t] and video[o].)  
  The second character means train[r] or test[e] sets.  
