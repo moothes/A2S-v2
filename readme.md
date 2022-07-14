@@ -4,10 +4,9 @@ Source code of our work: "[Appearance-guided Attentive Self-Paced Learning for U
 Our code is based on [A2S-v1](https://github.com/moothes/A2S-USOD) and [SOD benchmark](https://github.com/moothes/SALOD).
 
 Pretrained backbone: [MoCo-v2](https://github.com/facebookresearch/moco).  
+All trained weights can be download from [Onedrive](https://drive.google.com/drive/folders/1noB7bVjqJqFAYQubTLU_tyF6GkgLZT7z?usp=sharing).  
 RGB SOD results: [pseudo labels](https://drive.google.com/drive/folders/1agLC1iNoONw008jaqEvfRalrBWFWIAL4?usp=sharing) and [saliency maps](https://drive.google.com/drive/folders/15YOcPQ5vzBqlk50DEEVuBXSo5YzqpT89?usp=sharing).  
 More resources are coming soon.
-
-All trained weights can be download from [Onedrive](https://drive.google.com/drive/folders/1noB7bVjqJqFAYQubTLU_tyF6GkgLZT7z?usp=sharing).
 
  ## Dataset
  For convenience, we re-organized the datasets for different SOD tasks.  
