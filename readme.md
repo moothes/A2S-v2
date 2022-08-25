@@ -53,10 +53,10 @@ More resources are coming soon.
  ### Stage 2
  ```
  # RGB
- python3 train.py cornet --gpus=0 --stage=2 --trset=c --vals=ce --weight=path_to_weight [--save]
+ python3 train.py cornet --gpus=0 --stage=2 --trset=c --vals=ce [--save]
  
  # RGB-D, RGB-T or video SOD
- python3 train.py midd --gpus=0 --stage=2 --trset=[d/o/t] --vals=[de/oe/te] --weight=path_to_weight [--save]
+ python3 train.py midd --gpus=0 --stage=2 --trset=[d/o/t] --vals=[de/oe/te] [--save]
  ```
  
  ### Test
