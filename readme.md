@@ -1,5 +1,6 @@
 # A2S-v2
 
+## ***News: Our work is accepted by CVPR 2023. The latest paper will be updated soon!***  
 Source code of our work: "[Appearance-guided Attentive Self-Paced Learning for Unsupervised Salient Object Detection](https://arxiv.org/abs/2207.05921)".    
 Our code is based on [A2S-v1](https://github.com/moothes/A2S-USOD) and [SOD benchmark](https://github.com/moothes/SALOD).
 
