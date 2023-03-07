@@ -1,6 +1,6 @@
 # A2S-v2
 
-## ***News: Our work is accepted by CVPR 2023. The latest paper will be updated soon!***  
+## ***News: Our work is accepted by CVPR 2023. ***  
 Source code of our work: "[Texture-guided Saliency Distilling for Unsupervised Salient Object Detection](https://arxiv.org/abs/2207.05921)".    
 Our code is based on [A2S-v1](https://github.com/moothes/A2S-USOD) and [SOD benchmark](https://github.com/moothes/SALOD).
 
@@ -27,7 +27,7 @@ More resources are coming soon.
  
  ## Usage
  Network names used in our framework: Stage 1: ```a2s```; Stage 2: ```cornet``` (RGB SOD), ```midd``` (RGB-D, RGB-T and video SOD).  
- Our train sets include: DUTS-TR or MSB-TR, RGBD-TR, VT5000-TR and VSOD-TR.
+ Our train sets include: DUTS-TR/MSB-TR, RGBD-TR, VT5000-TR and VSOD-TR.
  
  ### Notice
  ```--vals``` is formated as two characters.   
@@ -42,10 +42,10 @@ More resources are coming soon.
  # RGB SOD
  python3 train.py a2s --gpus=0 --trset=c
  
- # MM-split
+ # Single multimodal dataset
  python3 train.py a2s --gpus=0 --trset=[d/o/t]
  
- # MM-joint
+ # Joint multimodal dataset
  python3 train.py a2s --gpus=0 --trset=cdot
  ```
  
