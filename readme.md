@@ -1,6 +1,6 @@
 # A2S-v2
 
-## ***News: Our work is accepted by CVPR 2023. ***  
+## News: Our work is accepted by CVPR 2023. 
 Source code of our work: "[Texture-guided Saliency Distilling for Unsupervised Salient Object Detection](https://arxiv.org/abs/2207.05921)".    
 Our code is based on [A2S-v1](https://github.com/moothes/A2S-USOD) and [SOD benchmark](https://github.com/moothes/SALOD).
 
