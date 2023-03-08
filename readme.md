@@ -12,16 +12,16 @@ More resources are coming soon.
  ## Dataset
  For convenience, we re-organized the datasets for different SOD tasks.  
  ### RGB SOD [download](https://drive.google.com/file/d/17X4SiSVuBmqkvQJe_ScVARKPM_vgvCOi/view?usp=sharing)
- 2 train sets: ```DUTS-TR``` or ```MSB-TR``` (the train split of MSRA-B).  
+ 2 training sets: ```DUTS-TR``` or ```MSB-TR``` (the train split of MSRA-B).  
  6 test sets: ```HKU-IS```, ```PASCAL-S```, ```ECSSD```, ```DUTS-TE```, ```DUT-OMRON``` and ```MSB-TE``` (the test split of MSRA-B).  
  ### RGB-D SOD [download](https://drive.google.com/file/d/1mvlkHBqpDal3Ce_gxqZWLzBg4QVWY64U/view?usp=sharing)
- 2 train sets: ```RGBD-TR``` or ```RGBD-TR-2985```. RGBD-TR include 2185 images, the same as other RGB-D SOD methods.  
+ 2 training sets: ```RGBD-TR``` or ```RGBD-TR-2985```. RGBD-TR include 2185 images, the same as other RGB-D SOD methods.  
  9 test sets: ```DUT```, ```LFSD```, ```NJUD```, ```NLPR```, ```RGBD135```, ```SIP```, ```SSD```, ```STERE1000``` and ```STEREO```.  
  ### RGB-T SOD [download](https://drive.google.com/file/d/1W-jp9dzUJbWrF6PphKeVk8sLOUiuKT56/view?usp=sharing)
- 1 train set: ```VT5000-TR``` (the train split of VT5000).  
+ 1 training set: ```VT5000-TR``` (the train split of VT5000).  
  3 test sets: ```VT821```, ```VT1000``` and ```VT5000-TE``` (the test split of VT5000).  
  ### Video SOD [download](https://drive.google.com/file/d/1xDvoFflPdlhxR1WSEyrT3dBQLjWADujR/view?usp=sharing)
- 1 train set: ```VSOD-TR``` (a collection of the train splits in the DAVIS and DAVSOD datasets).  
+ 1 training set: ```VSOD-TR``` (a collection of the train splits in the DAVIS and DAVSOD datasets).  
  4 test sets: ```SegV2```, ```FBMS```, ```DAVIS-TE``` and ```DAVSOD-TE```. The last two sets are the test splits of DAVIS and DAVSOD, respectively.  
  
  
