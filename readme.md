@@ -82,5 +82,5 @@ More resources are coming soon.
 
 ### Multi-modality SOD  
 <div align=center>
-<img src="https://github.com/moothes/A2S-v2/blob/main/mm.png", width=900>
+<img src="https://github.com/moothes/A2S-v2/blob/main/mm.PNG", width=900>
 </div>
