@@ -78,7 +78,7 @@ More resources are coming soon.
 
 ## Results
 ### RGB SOD  
-![Result](https://github.com/moothes/A2S-v2/blob/main/result.PNG)
+![Result](https://github.com/moothes/A2S-v2/blob/main/rgb.PNG)
 
 ### Multi-modality SOD  
 <div align=center>
