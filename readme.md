@@ -82,3 +82,16 @@ More resources are coming soon.
 <div align=center>
 <img src="https://github.com/moothes/A2S-v2/blob/main/mm.PNG", width=900>
 </div>
+
+
+
+Thanks for citing our work
+```xml
+@article{zhou2022a2s2,
+  title={Texture-guided Saliency Distilling for Unsupervised Salient Object Detection},
+  author={Zhou, Huajun and Qiao, Bo and Yang, Lingxiao and Lai, Jianhuang and Xie, Xiaohua},
+  journal={IEEE Conference on Computer Vision and Pattern Recognition},
+  year={2023},
+  publisher={IEEE}
+}
+```
