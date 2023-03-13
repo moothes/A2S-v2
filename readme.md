@@ -32,8 +32,9 @@ More resources are coming soon.
  ### Notice
  ```--vals``` is formated as two characters.   
  The first character means the task: (RGB[c], RGB-D[d], RGB-T[t] and video[o].)  
- The second character means train[r] or test[e] sets.  
+ The second character means training[r] or test[e] sets.  
  For example, ''cr'' incidates the train sets of the RGB SOD task, ''oe'' indicates the test sets of the VSOD task.   
+ ```--trset``` defines the training sets of different tasks used for training, similar with the first character of ```--vals```.  
  More details please refer to ```data.py```.
  
  
@@ -49,7 +50,7 @@ More resources are coming soon.
  python3 train.py a2s --gpus=0 --trset=cdot
  ```
  
- After the training process in stage 1, we will generate pseudo labels for all train sets and save them to a new ```pseudo``` folder.
+ After the training process in stage 1, we will generate pseudo labels for all training sets and save them to a new ```pseudo``` folder.
  
  ### Stage 2
  ```
