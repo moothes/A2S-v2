@@ -1,7 +1,6 @@
 # A2S-v2
 
-## News: Our work is accepted by CVPR 2023. 
-Source code of our work: "[Texture-guided Saliency Distilling for Unsupervised Salient Object Detection](https://arxiv.org/abs/2207.05921)".    
+Source code of our CVPR 2023 paper: "[Texture-guided Saliency Distilling for Unsupervised Salient Object Detection](https://arxiv.org/abs/2207.05921)".    
 Our code is based on [A2S-v1](https://github.com/moothes/A2S-USOD) and [SOD benchmark](https://github.com/moothes/SALOD).
 
 Pretrained backbone: [MoCo-v2](https://github.com/facebookresearch/moco).  
@@ -33,7 +32,7 @@ More resources are coming soon.
  ```--vals``` is formated as two characters.   
  The first character means the task: (RGB[c], RGB-D[d], RGB-T[t] and video[o].)  
  The second character means training[r] or test[e] sets.  
- For example, ''cr'' incidates the train sets of the RGB SOD task, ''oe'' indicates the test sets of the VSOD task.   
+ For example, ''cr'' incidates the training sets of the RGB SOD task, ''oe'' indicates the test sets of the VSOD task.   
  ```--trset``` defines the training sets of different tasks used for training, similar with the first character of ```--vals```.  
  More details please refer to ```data.py```.
  
