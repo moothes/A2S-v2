@@ -52,7 +52,8 @@ def CSDloss(pred, feat, mask=False, epoch=1, config=None, name=None):
     loss_map = torch.abs(pred - 0.5)
     loss_map = torch.pow(loss_map, mul)
     
-    loss = pow(0.5, mul) - loss_map.mean()
+    # The pow(0.5, mul) is used to keep the loss greater than 0. It has no impact on the training process.
+    loss = pow(0.5, mul) - loss_map.mean() 
     return loss
 
 def Loss(pre1, img1, pre2, img2, epoch, ws, config, name):
