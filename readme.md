@@ -1,7 +1,7 @@
 # A2S-v2
 
 Source code of our CVPR 2023 paper: "[Texture-guided Saliency Distilling for Unsupervised Salient Object Detection](https://arxiv.org/abs/2207.05921)".    
-This work is an improved method of our previous work [Activation-to-Saliency (A2S-v1)](https://github.com/moothes/A2S-USOD) published in [TCSVT 2023](https://ieeexplore.ieee.org/document/9875351).  
+This work is an improved method of our previous [Activation-to-Saliency (A2S-v1)](https://github.com/moothes/A2S-USOD) published in [TCSVT 2023](https://ieeexplore.ieee.org/document/9875351).  
 These two works are based on [SOD benchmark](https://github.com/moothes/SALOD), which provide an easy way for building new SOD methods. 
 
 ## Resource
@@ -27,7 +27,7 @@ RGB SOD results: [pseudo labels](https://drive.google.com/drive/folders/1agLC1iN
  
  ## Training & Testing
  Network names used in our framework: Stage 1: ```a2s```; Stage 2: ```cornet``` (RGB), ```midnet``` (RGB-D, RGB-T, and video).  
- Our train sets include: ```DUTS-TR```/```MSB-TR```, ```RGBD-TR```, ```VT5000-TR```, and ```VSOD-TR```.
+ Our training sets include: ```DUTS-TR```/```MSB-TR```, ```RGBD-TR```, ```VT5000-TR```, and ```VSOD-TR```.
  
  ### Notice
  ```--vals``` is formated as two characters to define the test sets.   
