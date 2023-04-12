@@ -2,7 +2,7 @@
 
 Source code of our CVPR 2023 paper: "[Texture-guided Saliency Distilling for Unsupervised Salient Object Detection](https://arxiv.org/abs/2207.05921)".    
 This work is an improved method of our previous [Activation-to-Saliency (A2S-v1)](https://github.com/moothes/A2S-USOD) published in [TCSVT 2023](https://ieeexplore.ieee.org/document/9875351).  
-These two works are based on [SOD benchmark](https://github.com/moothes/SALOD), which provide an easy way for building new SOD methods. 
+These two works are based on [SOD benchmark](https://github.com/moothes/SALOD), which provides an easy way for building new SOD methods. 
 
 ## Resource
 Pretrained backbone: [MoCo-v2](https://github.com/facebookresearch/moco).  
