@@ -38,16 +38,15 @@ def main():
         print('Load weights from: {}.'.format(config['weight']))
         model.load_state_dict(torch.load(config['weight'], map_location='cpu'))
         
-    # Loading datasets
     train_loader = get_loader(config)
     
     test_sets = get_test_list(config['vals'], config)
-    config['lrw'] = '1,0.05,1'
     
     debug = config['debug']
     num_epoch = config['epoch']
     num_iter = len(train_loader)
     ave_batch = config['ave_batch']
+    #batch = ave_batch * config['batch']
     trset = config['trset']
     batch_idx = 0
     model.zero_grad()
@@ -72,7 +71,7 @@ def main():
             mul = itr
             
             if stage == 1:
-                tune = 2 if config['trset'] == 'MSB-TR' else 20
+                tune = 2 if 'MSB-TR' in pack['name'][0] else 20
                 if epoch > tune:
                     optim.param_groups[0]['lr'] = config['lr'] * mul * 0.01
                 else:
@@ -80,8 +79,6 @@ def main():
                 
                 optim.param_groups[1]['lr'] = config['lr'] * mul
             else:
-                mul = 1
-                
                 optim.param_groups[0]['lr'] = config['lr'] * mul * 0.1
                 optim.param_groups[1]['lr'] = config['lr'] * mul
                 
@@ -115,7 +112,7 @@ def main():
                 if lr_weight is None or len(lr_weight) != 3:
                     lr_weight = [0.5, 0.05, 1]
                 
-                loss0, loss1, loss2 = model_loss(Y, priors, Y_ref, priors_temp, epoch, lr_weight, config)
+                loss0, loss1, loss2 = model_loss(Y, priors, Y_ref, priors_temp, epoch, lr_weight, config, gt_names)
                 loss += loss0 + loss1 + loss2
                     
                 ac_count += loss1
@@ -144,7 +141,6 @@ def main():
                     i, num_iter, float(loss_count / i), float(adb_count / i), float(ac_count / i), float(mse_count / i), lrs, time.time() - st)
             else:
                 Bar.suffix = '{:4}/{:4} | loss: {:1.3f}, LRs: [{}], time: {:1.3f}.'.format(i, num_iter, float(loss_count / i), lrs, time.time() - st)
-            
             bar.next()
             
             if epoch > 1 and stage > 1 and config['olr']:
@@ -154,15 +150,11 @@ def main():
                         pred = pred.flip(2)
                     new_gt = (pred * (1 - lamda)).cpu().numpy().transpose(1, 2, 0)
                     cv2.imwrite(gt_path, new_gt * 255)
-
+                
         sche.step()
         bar.finish()
         torch.cuda.empty_cache()
-
-        if (stage == 1 and epoch > 15) or stage == 2:
-            test_model(model, test_sets, config, epoch)
-            
-            
+        test_model(model, test_sets, config, epoch)
 
 if __name__ == "__main__":
     main()

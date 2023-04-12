@@ -6,24 +6,10 @@ from base.config import base_config, cfg_convert
 
 def get_config():
     # Default configure
-    ''' # For Resnet
     cfg_dict = {
-        'optim': 'Adam',
+        'optim': 'SGD',
         'schedule': 'StepLR',
-        'lr': 2e-5,
-        'batch': 8,
-        'ave_batch': 1,
-        'epoch': 20,
-        'step_size': '15',
-        'gamma': 0.1,
-        'clip_gradient': 0,
-        'test_batch': 1,
-    }
-    '''
-    cfg_dict = {
-        'optim': 'SGD', # 'Adam'
-        'schedule': 'StepLR',
-        'lr': 0.005,  # '1e-5'
+        'lr': 0.005,
         'batch': 8,
         'ave_batch': 1,
         'epoch': 10,
@@ -35,7 +21,6 @@ def get_config():
     
     parser = base_config(cfg_dict)
     # Add custom params here
-    # parser.add_argum  ent('--size', default=320, type=int, help='Input size')
     parser.add_argument('--resdual', default=0.4, type=float)
     
     params = parser.parse_args()
@@ -44,7 +29,6 @@ def get_config():
     print('Training {} network with {} backbone using Gpu: {}'.format(config['model_name'], config['backbone'], config['gpus']))
     
     # Config post-process
-    #config['params'] = [['encoder', config['lr'] / 10], ['global_', config['lr']], ['region', config['lr']], ['local', config['lr']]]
     config['params'] = [['encoder', config['lr'] / 10], ['decoder', config['lr']]]
     config['lr_decay'] = 0.9
     

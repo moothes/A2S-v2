@@ -24,6 +24,7 @@ def base_config(cfg_dict):
     parser.add_argument('--pretrain', default='moco', help='Weight path of network')
     
     parser.add_argument('--weight_path', default='./weight/', help='Weight path of network')
+    #parser.add_argument('--lrw', default='1,0.05,1', help='Weight path of network')
     
     parser.add_argument('--multi', action='store_false')
     parser.add_argument('--orig_size', action='store_true')
@@ -33,6 +34,7 @@ def base_config(cfg_dict):
     parser.add_argument('--trset', default='cdot', help='Set the traing set')
     parser.add_argument('--vals', default='cr,dr,or,tr', help='Set the testing sets') # cr, ce, dr, de, or, oe # SOD,PASCAL-S,ECSSD,DUTS-TE,HKU-IS,DUT-OMRON
     parser.add_argument('--data_path', default='../dataset', help='The name of network')
+    #parser.add_argument('--modality', default='c', help='The name of network')
     # c: Color image, d: RGB-D, o: Optical flow (video)
     
     parser.add_argument('--backbone', default='resnet', help='Set the backbone of the model')
@@ -52,6 +54,7 @@ def base_config(cfg_dict):
 def cfg_convert(config):
     if config['vals'] == 'all':
         config['vals'] = ['ECSSD', 'MSB-TE', 'DUT-OMRON', 'PASCAL-S', 'DUTS-TE', 'HKU-IS']
+        #config['vals'] = ['ECSSD', 'MSB-TE', 'DUT-OMRON']
     else:
         config['vals'] = config['vals'].split(',')
     

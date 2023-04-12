@@ -19,11 +19,6 @@ def load_framework(net_name):
     # Constructing network
     model = importlib.import_module('base.model').Network(net_name, config)
     
-    #input = torch.randn(1, 3, config['size'], config['size'])
-    #flops, params = profile(model, inputs=(input, ))
-    #params = params_count(model)
-    #print('FLOPs: {:.2f}, Params: {:.2f}.'.format(flops / 1e9, params / 1e6))
-    
     loss = importlib.import_module('methods.{}.loss'.format(net_name)).Loss
     
     # Loading Saver if it exists
@@ -33,7 +28,6 @@ def load_framework(net_name):
         saver = None
     
     gpus = range(len(config['gpus'].split(',')))
-    
     if len(gpus) > 1:
         model = torch.nn.DataParallel(model, device_ids=gpus)
         orig_model = model.module
@@ -57,7 +51,7 @@ def load_framework(net_name):
                 else:
                     others.append(param[1])
             module_lr = [{'params' : encoder, 'lr' : config['lr']*0.1}, {'params' : others, 'lr' : config['lr']}]
-            optimizer = SGD(params=module_lr, lr=config['lr'], momentum=0.9)
+            optimizer = SGD(params=module_lr, momentum=0.9)
     elif optim == 'Adam':
         optimizer = Adam(filter(lambda p: p.requires_grad, orig_model.parameters()), lr=config['lr'], weight_decay=0.0005)
     

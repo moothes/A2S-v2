@@ -79,7 +79,7 @@ def get_rgbd_list(name, config, phase):
     
     return name_list
     
-def get_rgbt_list(name, config, phase):    
+def get_rgbt_list(name, config, phase):
     name_list = []
     image_root = os.path.join(config['data_path'], 'RGBT/{}/RGB'.format(name))
     th_root = os.path.join(config['data_path'], 'RGBT/{}/T'.format(name))
@@ -141,7 +141,6 @@ def get_frame_list(name, config, phase):
             tag_dict['of'] = os.path.join(of_root, img_tag + '.jpg')
             name_list.append(tag_dict)
          
-    
     return name_list
 
 def get_train_image_list(names, config):
@@ -151,6 +150,7 @@ def get_train_image_list(names, config):
     ccc, ddd, ooo, ttt = [], [], [], []
     if 'c' in names:
         ccc = get_color_list('DUTS-TR', config, phase)
+        #ccc = get_color_list('MSB-TR', config, phase)
         image_list += ccc
     if 'd' in names:
         ddd = get_rgbd_list('RGBD-TR', config, phase)
@@ -172,7 +172,7 @@ def get_test_list(modes='cr', config=None):
         modal, subset = mode
         if subset == 'e':
             if modal == 'c':
-                test_list = ['PASCAL-S', 'ECSSD', 'MSB-TE', 'DUTS-TE', 'HKU-IS', 'DUT-OMRON']
+                test_list = ['PASCAL-S', 'ECSSD', 'MSB-TE', 'DUTS-TE', 'HKU-IS', 'DUT-OMRON'] # , 'SOD'
             elif modal == 'd':
                 #test_list = ['DUT', 'LFSD', 'NJUD', 'NLPR', 'RGBD135', 'SIP', 'SSD', 'STERE1000']
                 test_list = ['NJUD', 'NLPR', 'RGBD135', 'SIP']
@@ -186,20 +186,18 @@ def get_test_list(modes='cr', config=None):
                 test_dataset[set_name] = Test_Dataset(test_set, modal, config)
         else:
             if modal == 'c':
-                trset = 'DUTS-TR'
+                trset = 'DUTS-TR' # 'MSB-TR' #
             elif modal == 'd':
                 trset = 'RGBD-TR'
             elif modal == 'o':
                 trset = 'VSOD-TR'
             elif modal == 't':
                 trset = 'VT5000-TR'
-            
             set_name = '_'.join((modal, trset))
             test_dataset[set_name] = Test_Dataset(trset, modal, config)
         
     return test_dataset
     
-
 def get_loader(config):
     dataset = Train_Dataset(config)
     data_loader = data.DataLoader(dataset=dataset,
@@ -223,7 +221,6 @@ def read_modality(sub, sample_path, flip, img_size):
         modal = np.zeros((3, img_size, img_size)).astype(np.float32)
         
     return modal
-    
 
 class Train_Dataset(data.Dataset):
     def __init__(self, config):

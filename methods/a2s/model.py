@@ -1,31 +1,20 @@
 import torch
-from torch import nn, autograd, optim, Tensor, cuda
+from torch import nn
 from torch.nn import functional as F
-from torch.autograd import Variable
-from base.encoder.resnet import resnet
+
 
 def up_conv(cin, cout):
     yield nn.Conv2d(cin, cout, 3, padding=1)
     yield nn.GroupNorm(1, cout)
     yield nn.ReLU(inplace=True)
     
-    
 def foreground_sign(pred):
     b, c, w, h = pred.size()
     p = pred.gt(0).float()
     num_pos = p[:, :, 0, 0] + p[:, :, w-1, 0] + p[:, :, w-1, h-1] + p[:, :, 0, h-1]
     sign = ((num_pos < 2).float() * 2 - 1).view(b, c, 1, 1)
-    
     return sign
 
-def foreground_sign_old(pred):
-    mask = (pred > 0).float()
-    pos_num = torch.sum(mask, dim=(1,2,3))
-    total = mask.size()[2] * mask.size()[3]
-    pos_ratio = pos_num / total
-    sign = torch.sign(0.5 - pos_ratio)
-    sign = sign.view(-1, 1, 1, 1)
-    return sign
 
 class SE_block(nn.Module):
     def __init__(self, feat):
@@ -65,9 +54,7 @@ class decoder(nn.Module):
         self.ad4 = ada_block(config, feat[4], feat[0])
         self.fusion = ada_block(config, feat[0] * 3, feat[0])
         
-    def forward(self, feat_maps, x_size, phase='test'):
-        xs = feat_maps
-        
+    def forward(self, xs, x_size, phase='test'):
         x2 = self.ad2(xs[2])
         x3 = self.ad3(xs[3])
         x4 = self.ad4(xs[4])
@@ -92,13 +79,12 @@ class decoder(nn.Module):
         OutDict['final'] = pred
         
         return OutDict
-    
+
 class Network(nn.Module):
     def __init__(self, config, encoder, feat):
         # encoder: backbone, forward function output 5 encoder features. details in methods/base/model.py
         # feat: length of encoder features. e.g.: VGG:[64, 128, 256, 512, 512]; Resnet:[64, 256, 512, 1024, 2048]
         super(Network, self).__init__()
-
         self.encoder = encoder
         self.decoder = decoder(config, encoder, feat)
 

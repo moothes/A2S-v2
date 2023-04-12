@@ -235,6 +235,7 @@ def _resnet(arch, block, layers, pretrained, progress, **kwargs):
     model = ResNet(block, layers, **kwargs)
     #new_dict = None
     #state_dict = torch.load('../PretrainModel/moco_v2_800ep_pretrain.pth.tar', map_location='cpu')
+    
     state_dict = torch.load('../PretrainModel/moco_v2_200ep_pretrain.pth.tar', map_location='cpu')
     
     print('Use MoCo 200 pretrain!')
@@ -245,6 +246,7 @@ def _resnet(arch, block, layers, pretrained, progress, **kwargs):
         
     if new_dict is not None:
         model.load_state_dict(new_dict, strict=False)
+    
     return model
 
 

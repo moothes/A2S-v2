@@ -1,17 +1,8 @@
 import torch
-import torchvision
-from torch.autograd import Variable
-import torch.nn as nn
-import torch.nn.functional as F
+from torch import nn
+from torch.nn import functional as F
 
-from torch.utils.data import Dataset, DataLoader
-from torchvision import transforms, utils
-import torch.optim as optim
-import torchvision.transforms as standard_transforms
 from util import *
-
-import numpy as np
-from math import exp
 
 def IOU(pred, target):
     inter = target * pred
@@ -22,9 +13,9 @@ def IOU(pred, target):
 def Loss(preds, target, config):
     loss = 0
     
-    target = target.gt(0.5).float()
     for pred in preds['sal']:
         pred = nn.functional.interpolate(pred, size=target.size()[-2:], mode='bilinear')
+        target = target.gt(0.5).float()
         loss += IOU(torch.sigmoid(pred), target)
         
     return loss

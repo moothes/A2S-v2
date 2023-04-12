@@ -9,31 +9,23 @@ def get_config():
     cfg_dict = {
         'optim': 'SGD',
         'schedule': 'StepLR',
-        'lr': 0.1,
+        'lr': 0.005,
         'batch': 8,
         'ave_batch': 1,
-        'epoch': 20,
-        'step_size': '12,16',
-        'gamma': 0.1,
+        'epoch': 10,
+        'step_size': '6,8',
+        'gamma': 0.5,
         'clip_gradient': 0,
-        'test_batch': 1,
+        'test_batch': 1
     }
     
     parser = base_config(cfg_dict)
     # Add custom params here
-    parser.add_argument('--ac', default=0.05, type=float)
-    parser.add_argument('--rgb', default=200, type=float)
-    parser.add_argument('--lrw', type=str, default='1,0.05,1')
-    parser.add_argument('--temp', default='temp1', help='Job name')
-    parser.add_argument('--refine', action='store_true')
-
+    parser.add_argument('--resdual', default=0.4, type=float)
+    
     params = parser.parse_args()
     config = vars(params)
     cfg_convert(config)
     print('Training {} network with {} backbone using Gpu: {}'.format(config['model_name'], config['backbone'], config['gpus']))
-    
-    # Config post-process
-    config['params'] = [['encoder', 0], ['decoder', config['lr']]]
-    config['lr_decay'] = 0.9
     
     return config, None

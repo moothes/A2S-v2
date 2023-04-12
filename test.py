@@ -51,16 +51,14 @@ def test_model(model, test_sets, config, epoch=None, saver=None):
                 priors.append(torch.tensor(pack['th']).unsqueeze(0).float().cuda())
             
             out_shape = gt.shape[-2:]
-            
             if config['net_name'] == 'a2s':
                 Y = model(images)
             else:
                 Y = model(priors)
             
-            
             pred = Y['final'].sigmoid_().cpu().data.numpy()[0, 0]
             gt = (gt > 0.5).astype(np.float)
-            
+
             last = config['stage'] == 1 and epoch == config['epoch']
             if config['crf'] or last:
                 pred = (pred * 255).astype(np.uint8)
@@ -75,9 +73,8 @@ def test_model(model, test_sets, config, epoch=None, saver=None):
                 pred = (pred > 0.5).astype(np.uint8)
                 pred = crf_inference_label(orig_img, pred)
                 pred = cv2.medianBlur(pred.astype(np.uint8), 7)
-                
-            pred = np.clip(np.round(cv2.resize(pred, out_shape[::-1]) * 255) / 255., 0, 1)
             
+            pred = np.clip(np.round(cv2.resize(pred, out_shape[::-1]) * 255) / 255., 0, 1)
             MR.update(pre=pred, gt=gt)
             gt = (gt > 0.5).astype(np.float32)
             iou = cal_iou(pred, gt)
@@ -88,8 +85,7 @@ def test_model(model, test_sets, config, epoch=None, saver=None):
             
             # save predictions
             if config['save']:
-                #if last:
-                if True:
+                if false:
                     modal, real_name = set_name.split('_')
                     fnl_folder = os.path.join('./pseudo', modal, real_name)
                 else:
@@ -142,7 +138,6 @@ def main():
 
     test_sets = get_test_list(config['vals'], config)
     model = model.cuda()
-    
     test_model(model, test_sets, config, saver=saver)
         
 if __name__ == "__main__":
