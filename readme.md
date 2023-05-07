@@ -11,7 +11,7 @@ Results on other multimodal SOD datasets can be easily generated using our code.
 
  ## Training & Testing
  ### Dataset
-For each SOD task, we use the prevalent training sets as recent works and re-organized these datasets for convenience.   
+ For all SOD tasks, we use the prevalent training sets and re-organized these datasets for convenience.   
  Task | Stage 1 network | Stage 2 network | Training sets | Test sets 
 --- | --- | --- | --- | ---
 [RGB](https://drive.google.com/file/d/17X4SiSVuBmqkvQJe_ScVARKPM_vgvCOi/view?usp=sharing) | a2s | cornet | ```DUTS-TR``` or ```MSB-TR``` (the train split of MSRA-B) | ```HKU-IS```, ```PASCAL-S```, ```ECSSD```, ```DUTS-TE```, ```DUT-OMRON```,  ```MSB-TE``` (the test split of MSRA-B) 
