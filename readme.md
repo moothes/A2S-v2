@@ -14,11 +14,12 @@ Results on other multimodal SOD datasets can be easily generated using our code.
  For all SOD tasks, we use the prevalent training sets and re-organized these datasets for convenience.   
  Task | Stage 1 network | Stage 2 network | Training sets | Test sets 
 --- | --- | --- | --- | ---
-[RGB](https://drive.google.com/file/d/17X4SiSVuBmqkvQJe_ScVARKPM_vgvCOi/view?usp=sharing) | a2s | cornet | ```DUTS-TR``` or ```MSB-TR``` (the train split of MSRA-B) | ```HKU-IS```, ```PASCAL-S```, ```ECSSD```, ```DUTS-TE```, ```DUT-OMRON```,  ```MSB-TE``` (the test split of MSRA-B) 
-[RGB-D](https://drive.google.com/file/d/1mvlkHBqpDal3Ce_gxqZWLzBg4QVWY64U/view?usp=sharing) | a2s | midnet | ```RGBD-TR``` or ```RGBD-TR-2985``` | ```DUT```, ```LFSD```, ```NJUD```, ```NLPR```, ```RGBD135```, ```SIP```, ```SSD```, ```STERE1000```, ```STEREO```
-[RGB-T](https://drive.google.com/file/d/1W-jp9dzUJbWrF6PphKeVk8sLOUiuKT56/view?usp=sharing) | a2s | midnet | ```VT5000-TR``` (the train split of VT5000) | ```VT821```, ```VT1000``` and ```VT5000-TE``` (the test split of VT5000)
-[Video](https://drive.google.com/file/d/1xDvoFflPdlhxR1WSEyrT3dBQLjWADujR/view?usp=sharing) | a2s | midnet | ```VSOD-TR``` (a collection of the train splits in the DAVIS and DAVSOD datasets) | ```SegV2```, ```FBMS```, ```DAVIS-TE```, ```DAVSOD-TE```
+[RGB](https://drive.google.com/file/d/17X4SiSVuBmqkvQJe_ScVARKPM_vgvCOi/view?usp=sharing) | ```a2s``` | ```cornet``` | ```DUTS-TR``` or ```MSB-TR``` (the train split of MSRA-B) | ```HKU-IS```, ```PASCAL-S```, ```ECSSD```, ```DUTS-TE```, ```DUT-OMRON```,  ```MSB-TE``` (the test split of MSRA-B) 
+[RGB-D](https://drive.google.com/file/d/1mvlkHBqpDal3Ce_gxqZWLzBg4QVWY64U/view?usp=sharing) | ```a2s``` | ```midnet``` | ```RGBD-TR``` or ```RGBD-TR-2985``` | ```DUT```, ```LFSD```, ```NJUD```, ```NLPR```, ```RGBD135```, ```SIP```, ```SSD```, ```STERE1000```, ```STEREO```
+[RGB-T](https://drive.google.com/file/d/1W-jp9dzUJbWrF6PphKeVk8sLOUiuKT56/view?usp=sharing) | ```a2s``` | ```midnet``` | ```VT5000-TR``` (the train split of VT5000) | ```VT821```, ```VT1000``` and ```VT5000-TE``` (the test split of VT5000)
+[Video](https://drive.google.com/file/d/1xDvoFflPdlhxR1WSEyrT3dBQLjWADujR/view?usp=sharing) | ```a2s``` | ```midnet``` | ```VSOD-TR``` (a collection of the train splits in the DAVIS and DAVSOD datasets) | ```SegV2```, ```FBMS```, ```DAVIS-TE```, ```DAVSOD-TE```
  
+Networks ```a2s``` and ```cornet``` are inherited from our previous [A2S-v1](https://github.com/moothes/A2S-USOD) and ```midnet``` is from [here](https://github.com/lz118/Multi-interactive-Dual-decoder).   
 ```MSB-TR``` and  ```MSB-TE``` are the train+val and test splits of the MSRA-B dataset.   
 ```RGBD-TR``` (2185 samples) and ```RGBD-TR-2985``` (2985 samples) are two different training sets for RGB-D SOD task. In our paper, we use ```RGBD-TR``` by default.   
 ```VT5000-TR``` and ```VT5000-TE``` are the train and test splits of the VT5000 dataset.   
