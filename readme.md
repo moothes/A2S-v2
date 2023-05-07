@@ -5,28 +5,37 @@ This work is an improved method of our previous [Activation-to-Saliency (A2S-v1)
 These two works are based on [SOD benchmark](https://github.com/moothes/SALOD), which provides an easy way for building new SOD methods. 
 
 ## Resource
-Pretrained backbone: [MoCo-v2](https://github.com/facebookresearch/moco).  
-All trained weights can be download from [Onedrive](https://drive.google.com/drive/folders/1noB7bVjqJqFAYQubTLU_tyF6GkgLZT7z?usp=sharing).  
+You can download the pre-trained [MoCo-v2 weight](https://github.com/facebookresearch/moco) and all trained [weights](https://drive.google.com/drive/folders/1noB7bVjqJqFAYQubTLU_tyF6GkgLZT7z?usp=sharing) of our method.  
 RGB SOD results: [pseudo labels](https://drive.google.com/drive/folders/1agLC1iNoONw008jaqEvfRalrBWFWIAL4?usp=sharing) and [saliency maps](https://drive.google.com/drive/folders/15YOcPQ5vzBqlk50DEEVuBXSo5YzqpT89?usp=sharing).  
-
- ### Dataset
- For convenience, we re-organized the datasets for different SOD tasks.  
- Task | Training sets | Test sets 
---- | --- | --- 
-[RGB](https://drive.google.com/file/d/17X4SiSVuBmqkvQJe_ScVARKPM_vgvCOi/view?usp=sharing) | ```DUTS-TR``` or ```MSB-TR``` (the train split of MSRA-B) | ```HKU-IS```, ```PASCAL-S```, ```ECSSD```, ```DUTS-TE```, ```DUT-OMRON```,  ```MSB-TE``` (the test split of MSRA-B) 
-[RGB-D](https://drive.google.com/file/d/1mvlkHBqpDal3Ce_gxqZWLzBg4QVWY64U/view?usp=sharing) | ```RGBD-TR``` or ```RGBD-TR-2985``` | ```DUT```, ```LFSD```, ```NJUD```, ```NLPR```, ```RGBD135```, ```SIP```, ```SSD```, ```STERE1000```, ```STEREO```
-[RGB-T](https://drive.google.com/file/d/1W-jp9dzUJbWrF6PphKeVk8sLOUiuKT56/view?usp=sharing) | ```VT5000-TR``` (the train split of VT5000) | ```VT821```, ```VT1000``` and ```VT5000-TE``` (the test split of VT5000)
-[Video](https://drive.google.com/file/d/1xDvoFflPdlhxR1WSEyrT3dBQLjWADujR/view?usp=sharing) | ```VSOD-TR``` (a collection of the train splits in the DAVIS and DAVSOD datasets) | ```SegV2```, ```FBMS```, ```DAVIS-TE```, ```DAVSOD-TE```
+Results on other multimodal SOD datasets can be easily generated using our code.
 
  ## Training & Testing
- Network names used in our framework: Stage 1: ```a2s```; Stage 2: ```cornet``` (RGB), ```midnet``` (RGB-D, RGB-T, and video).  
- Our training sets include: ```DUTS-TR```/```MSB-TR```, ```RGBD-TR```, ```VT5000-TR```, and ```VSOD-TR```.
+ ### Dataset
+For each SOD task, we use the prevalent training sets as recent works and re-organized these datasets for convenience.   
+ Task | Stage 1 network | Stage 2 network | Training sets | Test sets 
+--- | --- | --- | --- | ---
+[RGB](https://drive.google.com/file/d/17X4SiSVuBmqkvQJe_ScVARKPM_vgvCOi/view?usp=sharing) | a2s | cornet | ```DUTS-TR``` or ```MSB-TR``` (the train split of MSRA-B) | ```HKU-IS```, ```PASCAL-S```, ```ECSSD```, ```DUTS-TE```, ```DUT-OMRON```,  ```MSB-TE``` (the test split of MSRA-B) 
+[RGB-D](https://drive.google.com/file/d/1mvlkHBqpDal3Ce_gxqZWLzBg4QVWY64U/view?usp=sharing) | a2s | midnet | ```RGBD-TR``` or ```RGBD-TR-2985``` | ```DUT```, ```LFSD```, ```NJUD```, ```NLPR```, ```RGBD135```, ```SIP```, ```SSD```, ```STERE1000```, ```STEREO```
+[RGB-T](https://drive.google.com/file/d/1W-jp9dzUJbWrF6PphKeVk8sLOUiuKT56/view?usp=sharing) | a2s | midnet | ```VT5000-TR``` (the train split of VT5000) | ```VT821```, ```VT1000``` and ```VT5000-TE``` (the test split of VT5000)
+[Video](https://drive.google.com/file/d/1xDvoFflPdlhxR1WSEyrT3dBQLjWADujR/view?usp=sharing) | a2s | midnet | ```VSOD-TR``` (a collection of the train splits in the DAVIS and DAVSOD datasets) | ```SegV2```, ```FBMS```, ```DAVIS-TE```, ```DAVSOD-TE```
+ 
+```MSB-TR``` and  ```MSB-TE``` are the train+val and test splits of the MSRA-B dataset.   
+```RGBD-TR``` (2185 samples) and ```RGBD-TR-2985``` (2985 samples) are two different training sets for RGB-D SOD task. In our paper, we use ```RGBD-TR``` by default.   
+```VT5000-TR``` and ```VT5000-TE``` are the train and test splits of the VT5000 dataset.   
+```VSOD-TR``` is the collection of the train splits of the DAVIS and DAVSOD datasets.
  
  ### Notice
- ```--vals``` is formated as two characters to define the test sets.   
+ ```--vals``` has two characters that define the datasets used for testing.   
  **First character** (task): RGB[**c**], RGB-D[**d**], RGB-T[**t**], and video[**o**];   
  **Second character** (dataset): training[**r**] or test[**e**] sets.  
- For example, ''cr'' incidates the training sets of RGB SOD task, ''oe'' indicates the test sets of VSOD task.   
+ 
+ 
+ vals | cr | ce | or | oe  
+ :--- | :--- | :--- | :--- | :---
+ Dataset | ```DUTS-TR``` or ```MSB-TR``` | ```HKU-IS```, ```PASCAL-S```, ```ECSSD```, ```DUTS-TE```, ```DUT-OMRON```,  ```MSB-TE``` | ```VSOD-TR``` | ```SegV2```, ```FBMS```, ```DAVIS-TE```, ```DAVSOD-TE``` 
+ **vals** | **dr** | **de** | **tr** | **te** 
+ Dataset | ```RGBD-TR``` or ```RGBD-TR-2985``` | ```DUT```, ```LFSD```, ```NJUD```, ```NLPR```, ```RGBD135```, ```SIP```, ```SSD```, ```STERE1000```, ```STEREO``` | ```VT5000-TR``` | ```VT821```, ```VT1000``` and ```VT5000-TE```
+ 
  ```--trset``` defines the training sets of different tasks used for training, similar with the first character of ```--vals```.  
  More details please refer to ```data.py```.
  
