@@ -37,7 +37,7 @@ Networks ```a2s``` and ```cornet``` are inherited from our previous [A2S-v1](htt
  **vals** | **dr** | **de** | **tr** | **te** 
  Dataset | ```RGBD-TR``` or ```RGBD-TR-2985``` | ```DUT```, ```LFSD```, ```NJUD```, ```NLPR```, ```RGBD135```, ```SIP```, ```SSD```, ```STERE1000```, ```STEREO``` | ```VT5000-TR``` | ```VT821```, ```VT1000``` and ```VT5000-TE```
  
- ```--trset``` defines the training sets of different tasks used for training, similar with the first character of ```--vals```.  
+ ```--trset``` defines the training sets of different tasks, similar with the first character of ```--vals```.  
  More details please refer to ```data.py```.
  
  ### Stage 1
