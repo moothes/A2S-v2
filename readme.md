@@ -77,12 +77,13 @@ Networks ```a2s``` and ```cornet``` are inherited from our previous [A2S-v1](htt
 ## Reference 
 Thanks for citing our serial works.
 ```xml
-@article{zhou2023a2s2,
-  title={Texture-guided Saliency Distilling for Unsupervised Salient Object Detection},
-  author={Zhou, Huajun and Qiao, Bo and Yang, Lingxiao and Lai, Jianhuang and Xie, Xiaohua},
-  journal={IEEE Conference on Computer Vision and Pattern Recognition},
-  year={2023},
-  publisher={IEEE}
+@InProceedings{zhou2023a2s2,
+    author    = {Zhou, Huajun and Qiao, Bo and Yang, Lingxiao and Lai, Jianhuang and Xie, Xiaohua},
+    title     = {Texture-Guided Saliency Distilling for Unsupervised Salient Object Detection},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2023},
+    pages     = {7257-7267}
 }
 
 @ARTICLE{zhou2023a2s1,
