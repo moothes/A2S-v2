@@ -2,7 +2,7 @@
 
 Source code of our CVPR 2023 paper: "[Texture-guided Saliency Distilling for Unsupervised Salient Object Detection](https://arxiv.org/abs/2207.05921)".    
 This work is an improved method of our previous [Activation-to-Saliency (A2S-v1)](https://github.com/moothes/A2S-USOD) published in [TCSVT 2023](https://ieeexplore.ieee.org/document/9875351).  
-These two works are based on [SOD benchmark](https://github.com/moothes/SALOD), which provides an easy way for building new SOD methods. 
+These two works are based on [SOD benchmark](https://github.com/moothes/SALOD). 
 
 ## Resource
 You can download the pre-trained [MoCo-v2 weight](https://github.com/facebookresearch/moco) and all trained [weights](https://drive.google.com/drive/folders/1noB7bVjqJqFAYQubTLU_tyF6GkgLZT7z?usp=sharing) of our method.  
@@ -21,15 +21,15 @@ Results on other multimodal SOD datasets can be easily generated using our code.
  
 Networks ```a2s``` and ```cornet``` are inherited from our previous [A2S-v1](https://github.com/moothes/A2S-USOD) and ```midnet``` is from [here](https://github.com/lz118/Multi-interactive-Dual-decoder).   
 ```MSB-TR``` and  ```MSB-TE``` are the train+val and test splits of the MSRA-B dataset.   
-```RGBD-TR``` (2185 samples) and ```RGBD-TR-2985``` (2985 samples) are two different training sets for RGB-D SOD task. In our paper, we use ```RGBD-TR``` by default.   
+```RGBD-TR``` (2185 samples, default) and ```RGBD-TR-2985``` (2985 samples) are two different training sets for RGB-D SOD task.  
 ```VT5000-TR``` and ```VT5000-TE``` are the train and test splits of the VT5000 dataset.   
 ```VSOD-TR``` is the collection of the train splits of the DAVIS and DAVSOD datasets.
  
  ### Notice
  ```--vals``` has two characters that define the datasets used for testing.   
  **First character** (task): RGB[**c**], RGB-D[**d**], RGB-T[**t**], and video[**o**];   
- **Second character** (dataset): training[**r**] or test[**e**] sets.   
- ```--trset``` defines the training sets of different tasks, similar with the first character of ```--vals```.  
+ **Second character** (phase): training[**r**] or test[**e**] sets.   
+ ```--trset``` defines the training sets of different tasks, the same as the first character of ```--vals```.  
  More details please refer to ```data.py```.
  
  ### Stage 1
