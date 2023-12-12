@@ -11,13 +11,13 @@ Results on other multimodal SOD datasets can be easily generated using our code.
 
  ## Training & Testing
  ### Dataset
- For all SOD tasks, we use the prevalent training sets and re-organized these datasets for convenience.   
- Task | Stage 1 network | Stage 2 network | Training sets | Test sets 
+ For convenience, we re-organize the prevalent datasets used in SOD tasks.   
+ Task &nbsp; &nbsp; &nbsp; &nbsp; | Stage 1 network | Stage 2 network | Training sets | Test sets 
 --- | --- | --- | --- | ---
-[RGB](https://drive.google.com/file/d/17X4SiSVuBmqkvQJe_ScVARKPM_vgvCOi/view?usp=sharing) | ```a2s``` | ```cornet``` | **[cr]** ```DUTS-TR``` or ```MSB-TR``` (the train split of MSRA-B) | **[ce]** ```HKU-IS```, ```PASCAL-S```, ```ECSSD```, ```DUTS-TE```, ```DUT-OMRON```,  ```MSB-TE``` (the test split of MSRA-B) 
+[RGB](https://drive.google.com/file/d/17X4SiSVuBmqkvQJe_ScVARKPM_vgvCOi/view?usp=sharing) | ```a2s``` | ```cornet``` | **[cr]** ```DUTS-TR``` or ```MSB-TR``` | **[ce]** ```HKU-IS```, ```PASCAL-S```, ```ECSSD```, ```DUTS-TE```, ```DUT-OMRON```,  ```MSB-TE```   
 [RGB-D](https://drive.google.com/file/d/1mvlkHBqpDal3Ce_gxqZWLzBg4QVWY64U/view?usp=sharing) | ```a2s``` | ```midnet``` | **[dr]** ```RGBD-TR``` or ```RGBD-TR-2985``` | **[de]** ```DUT```, ```LFSD```, ```NJUD```, ```NLPR```, ```RGBD135```, ```SIP```, ```SSD```, ```STERE1000```, ```STEREO```
-[RGB-T](https://drive.google.com/file/d/1W-jp9dzUJbWrF6PphKeVk8sLOUiuKT56/view?usp=sharing) | ```a2s``` | ```midnet``` | **[tr]** ```VT5000-TR``` (the train split of VT5000) | **[te]** ```VT821```, ```VT1000``` and ```VT5000-TE``` (the test split of VT5000)
-[Video](https://drive.google.com/file/d/1xDvoFflPdlhxR1WSEyrT3dBQLjWADujR/view?usp=sharing) | ```a2s``` | ```midnet``` | **[or]** ```VSOD-TR``` (a collection of the train splits in the DAVIS and DAVSOD datasets) | **[oe]** ```SegV2```, ```FBMS```, ```DAVIS-TE```, ```DAVSOD-TE```
+[RGB-T](https://drive.google.com/file/d/1W-jp9dzUJbWrF6PphKeVk8sLOUiuKT56/view?usp=sharing) | ```a2s``` | ```midnet``` | **[tr]** ```VT5000-TR```  | **[te]** ```VT821```, ```VT1000``` and ```VT5000-TE``` 
+[Video](https://drive.google.com/file/d/1xDvoFflPdlhxR1WSEyrT3dBQLjWADujR/view?usp=sharing) | ```a2s``` | ```midnet``` | **[or]** ```VSOD-TR``` | **[oe]** ```SegV2```, ```FBMS```, ```DAVIS-TE```, ```DAVSOD-TE```
  
 Networks ```a2s``` and ```cornet``` are inherited from our previous [A2S-v1](https://github.com/moothes/A2S-USOD) and ```midnet``` is from [here](https://github.com/lz118/Multi-interactive-Dual-decoder).   
 ```MSB-TR``` and  ```MSB-TE``` are the train+val and test splits of the MSRA-B dataset.   
