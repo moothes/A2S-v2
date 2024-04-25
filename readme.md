@@ -1,9 +1,11 @@
 # Activation-to-Saliency version2 (A2S-v2)
 
+### An excellent work A2S-v3 is accepted by IJCAI 2024! You are welcome to check the latest code of [A2S-v3](https://github.com/I2-Multimedia-Lab/A2S-v3) for further contributions.
+### The naming convention is open to the community, e.g., A2S-v4, as long as they 1) are published in top-tier conferences or journals and 2) don't conflict with other works.
+
 Source code of our CVPR 2023 paper: "[Texture-guided Saliency Distilling for Unsupervised Salient Object Detection](https://arxiv.org/abs/2207.05921)".    
 This work is an improved method of our previous [Activation-to-Saliency (A2S-v1)](https://github.com/moothes/A2S-USOD) published in [TCSVT 2023](https://ieeexplore.ieee.org/document/9875351).  
 These two works are based on [SOD benchmark](https://github.com/moothes/SALOD). 
-#### The naming convention is open to the community, e.g., A2S-v3, as long as they 1) are published in top-tier conferences or journals and 2) don't conflict with other works.
 
 ## Resource
 You can download the pre-trained [MoCo-v2 weight](https://github.com/facebookresearch/moco) and all trained [weights](https://drive.google.com/drive/folders/1noB7bVjqJqFAYQubTLU_tyF6GkgLZT7z?usp=sharing) of our method.  
